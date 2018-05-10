@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Free Bootstrap Themes by Html5xCss3 dot com - Free Responsive Html5 Templates">
     <meta name="author" content="http://www.Html5xCss3.com">
 	
     <title>Gallery | The Munchybrisk</title>
@@ -104,73 +103,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-lg-3 col-sm-6 nopadding">
-											<div class="portfolio-box zoom-effect">
-												<img src="other/images/14.jpg" class="img-responsive" alt="">
-												<div class="portfolio-box-caption">
-													<div class="portfolio-box-caption-content">
-														
-														<div class="project-social">
-															
-																<li><a href="#"><i class="fa fa-link"></i></a></li>
-																<li><a href="other/images/14.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><i class="fa fa-search"></i></a></li>
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-3 col-sm-6 nopadding">
-											<div class="portfolio-box zoom-effect">
-												<img src="other/images/15.jpg" class="img-responsive" alt="">
-												<div class="portfolio-box-caption">
-													<div class="portfolio-box-caption-content">
-														
-														<div class="project-social">
-															
-																<li><a href="#"><i class="fa fa-link"></i></a></li>
-																<li><a href="other/images/15.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><i class="fa fa-search"></i></a></li>
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-3 col-sm-6 nopadding">
-											<div class="portfolio-box zoom-effect">
-												<img src="other/images/16.jpg" class="img-responsive" alt="">
-												<div class="portfolio-box-caption">
-													<div class="portfolio-box-caption-content">
-														
-														<div class="project-social">
-															<!--<ul class="list-inline">-->
-																<li><a href="#"><i class="fa fa-link"></i></a></li>
-																<li><a href="other/images/16.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><i class="fa fa-search"></i></a></li>
-															<!--</ul>-->
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-3 col-sm-6 nopadding">
-											<div class="portfolio-box zoom-effect">
-												<img src="other/images/17.jpg" class="img-responsive" alt="">
-												<div class="portfolio-box-caption">
-													<div class="portfolio-box-caption-content">
-													
-														<div class="project-social">
-															
-																<li><a href="#"><i class="fa fa-link"></i></a></li>
-																<li><a href="other/images/17.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><i class="fa fa-search"></i></a></li>
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<dir class="load-more-div"></dir>
+									<button id="load-more" class="btn">Load more</button>
 								</div>
 							</div>
 						</div>
@@ -186,12 +120,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
-							<p>Copyright 20xx - Designed by <a href="https://www.html5xcss3.com">HTML5xCSS3</a></p>
+							<p>Copyright 2018 - Designed by <a href="">THE MUNCHYBRISK</a></p>
 						</div>
 						<div class="col-md-6">
 							<ul class="list-inline social-link">
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="https://www.facebook.com/Html5xCss3"><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
 							</ul>
@@ -221,7 +155,17 @@
 	<script src="other/js/arctext.min.js"></script>
 	<script>
 		$(document).ready(function() {
-		  $(".line-2").arctext({radius: 400});
+		  $(".line-2").arctext({radius: 500});
+
+		  $("#load-more").click(function(){
+		  	$.ajax({
+		  		type:"GET",
+		  		url:"gallery2.html",
+		  		success:function(data){
+		  			$(".load-more-div").html(data);
+		  		}
+		  	})
+		  })
 		});
 	</script>
 	
