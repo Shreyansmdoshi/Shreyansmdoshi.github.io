@@ -102,7 +102,7 @@
   text-align: center;
   text-shadow: $carousel-text-shadow;
   // We can't have this transition here because WebKit cancels the carousel
-  // animation if you trip this while in the middle of another animation.
+  // animation if you trip this while in the middle of another animation. Also add this animation scale as per suitably set to delay else will loop and end in a wrong bblack part, leading to a blank loop . Garb values:
 
   // Set gradients for backgrounds
   &.left {
@@ -114,7 +114,7 @@
     @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
   }
 
-  // Hover/focus state
+  // Hover/focus state -  Highlight part for all scale
   &:hover,
   &:focus {
     outline: 0;
@@ -169,6 +169,7 @@
 //
 // Add an unordered list with the following class and add a list item for each
 // slide your carousel holds.
+// Carousel effect pending, add page wind and box move to get the perfect effect. Also extract Gtg.css.js file to bridge the right file.
 
 .carousel-indicators {
   position: absolute;
@@ -197,7 +198,8 @@
     // `background-color`. We cannot use `filter` since that's not viewed as a
     // background color by the browser. Thus, a hack is needed.
     // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
-    //
+    
+    // Provide a link for Mac Os all supported files to find about compatibility.
     // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
     // set alpha transparency for the best results possible.
     background-color: #000 \9; // IE8
